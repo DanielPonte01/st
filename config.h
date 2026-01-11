@@ -46,7 +46,7 @@ int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 0;
+int allowwindowops = 1;
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -138,8 +138,10 @@ static const char *colorname[] = {
     [255] = 0,
 
     /* more colors can be added after 255 to use with DefaultXX */
-    "#e4e4ef", /* 256 -> cursor (yellow) */
-    "#e4e4ef", /* 257 -> rev cursor (fg) */
+    // "#e4e4ef", /* 256 -> cursor (yellow) */
+    //"#e4e4ef", /* 257 -> rev cursor (fg) */
+    "#CC6B4A", /* 256 -> cursor (yellow) */
+    "#F4F1EA", /* 257 -> rev cursor (fg) */
     "#181818", /* 258 -> bg */
     "#f5f5f5", /* 259 -> fg */
 };
@@ -276,7 +278,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
 	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
-	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
+	//{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
 	{ MODKEY,		XK_f,		changealpha,	{.f = -0.05} },
 	{ MODKEY,		XK_g,		changealpha,	{.f = +0.05} },
@@ -287,7 +289,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
 	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
 	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
-	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
+	{ MODKEY,               XK_u,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
 };
 
